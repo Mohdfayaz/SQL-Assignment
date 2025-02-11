@@ -32,7 +32,7 @@ CREATE TABLE orders (
 INSERT INTO customers (name, email, address) VALUES
 ('Riyaz Bhai', 'riyazbro123@gmail.com', '123 saidapet Street'),
 ('Zubair Ahmad', 'zubairah321@gmail.com', '456 velachery Avenue'),
-('', 'alice@example.com', '789 Pine Road');
+('salman Khan', 'salmankhan231@gmail.com', '789 bombay Road');
 
 -- Insert sample data into products
 INSERT INTO products (name, price, description) VALUES
@@ -54,7 +54,7 @@ WHERE o.order_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY);
 
 -- Output:
 -- | id | name         | email                 | address              |
--- |----|------------  |------------------     |------------------    |
+-- |----|--------------|-----------------------|----------------------|
 -- | 1  | Riyaz Bhai   | Riyazbro123@gmail.com | 123 saidapet Street  |
 -- | 2  | Zubair Ahmad | zubairah321@gmail.com | 456 velachery Avenue |
  
@@ -64,12 +64,12 @@ JOIN orders o ON c.id = o.customer_id
 GROUP BY c.id;
 
 -- Output:
--- | name       | total_spent |
--- |------------|-------------|
--- | John Doe   | 75.00       |
--- | Jane Smith | 120.00      |
--- | Alice Brown| 200.00      |
-
+-- | name         | total_spent |
+-- |--------------|-------------|
+-- | Riyaz Bhai   | 75.00       |
+-- | Zubair Ahmed | 120.00      |
+-- | Salman Khan  | 200.00      |
+ 
 -- Update the price of Product C to 45.00
 UPDATE products SET price = 45.00 WHERE name = 'Product C';
 
@@ -94,20 +94,20 @@ JOIN products p ON oi.product_id = p.id
 WHERE p.name = 'Product A';
 
 -- Output:
--- | name     |
--- |----------|
--- | John Doe |
+-- | name      |
+-- |-----------|
+-- | Riyaz Bhai|
 
 -- Join orders and customers to retrieve the customer's name and order date
 SELECT c.name, o.order_date FROM orders o
 JOIN customers c ON o.customer_id = c.id;
 
 -- Output:
--- | name       | order_date |
--- |------------|------------|
--- | John Doe   | 2025-02-11 |
--- | Jane Smith | 2025-01-27 |
--- | Alice Brown| 2024-12-28 |
+-- | name         | order_date |
+-- |--------------|------------|
+-- | Riyaz Bhai   | 2025-02-11 |
+-- | Zubair Ahmad | 2025-01-27 |
+-- | Salman Khan  | 2024-12-28 |
 
 -- Retrieve orders with a total amount greater than 150.00
 SELECT * FROM orders WHERE total_amount > 150.00;
