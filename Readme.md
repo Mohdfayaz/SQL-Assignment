@@ -30,9 +30,9 @@ CREATE TABLE orders (
 
 -- Insert sample data into customers
 INSERT INTO customers (name, email, address) VALUES
-('Riyaz Bhai', 'Riyazbro123@gmail.com', '123 Elm Street'),
-('Jane Smith', 'jane@example.com', '456 Oak Avenue'),
-('Alice Brown', 'alice@example.com', '789 Pine Road');
+('Riyaz Bhai', 'riyazbro123@gmail.com', '123 saidapet Street'),
+('Zubair Ahmad', 'zubairah321@gmail.com', '456 velachery Avenue'),
+('', 'alice@example.com', '789 Pine Road');
 
 -- Insert sample data into products
 INSERT INTO products (name, price, description) VALUES
@@ -53,10 +53,10 @@ JOIN orders o ON c.id = o.customer_id
 WHERE o.order_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY);
 
 -- Output:
--- | id | name       | email            | address          |
--- |----|------------|------------------|------------------|
--- | 1  | John Doe   | john@example.com | 123 Elm Street   |
--- | 2  | Jane Smith | jane@example.com | 456 Oak Avenue   |
+-- | id | name         | email                 | address              |
+-- |----|------------  |------------------     |------------------    |
+-- | 1  | Riyaz Bhai   | Riyazbro123@gmail.com | 123 saidapet Street  |
+-- | 2  | Zubair Ahmad | zubairah321@gmail.com | 456 velachery Avenue |
  
 -- Get the total amount of all orders placed by each customer
 SELECT c.name, SUM(o.total_amount) AS total_spent FROM customers c
