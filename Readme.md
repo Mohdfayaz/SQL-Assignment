@@ -30,7 +30,7 @@ CREATE TABLE orders (
 
 -- Insert sample data into customers
 INSERT INTO customers (name, email, address) VALUES
-('John Doe', 'john@example.com', '123 Elm Street'),
+('Riyaz Bhai', 'Riyazbro123@gmail.com', '123 Elm Street'),
 ('Jane Smith', 'jane@example.com', '456 Oak Avenue'),
 ('Alice Brown', 'alice@example.com', '789 Pine Road');
 
